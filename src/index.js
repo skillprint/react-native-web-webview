@@ -31,7 +31,9 @@ export class WebView extends Component {
     const baseUrl = uri.substr(0, uri.lastIndexOf('/') + 1);
     fetch(uri, options)
       .then((response) => response.text())
-      .then((html) => this.setState({ html: `<base href="${baseUrl}" />` + html }));
+      .then((html) => this.setState(
+          { html: html.replace(`<head>`, `<head><base href="${baseUrl}" />`)}
+      ));
   };
 
   handleSourceInNewWindow = (source, newWindow) => {
