@@ -103,8 +103,8 @@ export class WebView extends Component {
       }
       if (this.props.injectedJavaScriptBeforeContentLoaded) {
         html = html.replace(
-            '<head>',
-            `<head><script>${this.props.injectedJavaScriptBeforeContentLoaded}</script>`
+          '<head>',
+          `<head><script>${this.props.injectedJavaScriptBeforeContentLoaded}</script>`
         );
       }
     }
