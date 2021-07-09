@@ -125,7 +125,7 @@ export class WebView extends Component {
     return createElement('iframe', {
       title,
       ref: this.setRef,
-      src: !source.method ? source.uri : undefined,
+      src: source.uri,
       srcDoc: this.handleInjectedJavaScript(this.state.html || source.html),
       width: styleObj && styleObj.width,
       height: styleObj && styleObj.height,
