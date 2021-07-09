@@ -97,13 +97,11 @@ export class WebView extends Component {
   };
 
   handleInjectedJavaScript = (html) => {
-    if (this.props.injectedJavaScript) {
-      if (html) {
+    if (html) {
+      if (this.props.injectedJavaScript) {
         html = html.replace('</body>', `<script>${this.props.injectedJavaScript}</script></body>`);
       }
-    }
-    if (this.props.injectedJavaScriptBeforeContentLoaded) {
-      if (html) {
+      if (this.props.injectedJavaScriptBeforeContentLoaded) {
         html = html.replace(
             '<head>',
             `<head><script>${this.props.injectedJavaScriptBeforeContentLoaded}</script>`
