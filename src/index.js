@@ -101,6 +101,15 @@ export class WebView extends Component {
       } else {
         return html;
       }
+    } else if (this.props.injectedJavaScriptBeforeContentLoaded) {
+      if (html) {
+        return html.replace(
+         '<head>',
+         `<head><script>${this.props.injectedJavaScriptBeforeContentLoaded}</script>`
+        );
+      } else {
+        return html;
+      }
     } else {
       return html;
     }
